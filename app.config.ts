@@ -16,6 +16,10 @@ export default ({ config }: ConfigContext): ExpoConfig => {
     ...config,
     name: config.name ?? 'my-app',
     slug: config.slug ?? 'app-sct-mobile',
+    android: {
+      ...config.android,
+      package: 'cat.uxland.sctmobile',
+    },
     plugins: [
       ...(config.plugins ?? []),
       ['react-native-maps', { androidGoogleMapsApiKey: androidGoogleMapsApiKey ?? '' }],
